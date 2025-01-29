@@ -1,0 +1,90 @@
+/* Base Styles */
+body {
+    font-family: 'Mitr', sans-serif; /* Ensures the font is applied globally */
+    color: #333; /* Dark gray color for better readability */
+    background: #f0f0f0; /* Light background to reduce eye strain */
+    margin: 0;
+    padding: 0;
+}
+
+/* News Header Styles */
+.news-header {
+    background-color: #007BFF; /* Vibrant blue for a striking header */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 24px; /* Larger text for the header */
+}
+
+/* Container for all news items */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px; /* Limits the width for better readability */
+    margin: 0 auto; /* Centers the container */
+}
+
+/* Featured News Styles */
+.featured-news {
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15); /* Stronger shadow for more depth */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.featured-news:hover {
+    transform: translateY(-5px); /* Subtle lift effect on hover */
+}
+
+.featured-news img {
+    width: 100%;
+    height: 300px; /* Fixed height for uniformity */
+    object-fit: cover;
+}
+
+.featured-news h3, .featured-news p {
+    padding: 10px 20px;
+}
+
+/* Other News Grid */
+.grid-news {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.news-item {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 15px;
+    font-size: 16px; /* Slightly larger font for readability */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .featured-news, .grid-news {
+        width: 100%;
+    }
+}

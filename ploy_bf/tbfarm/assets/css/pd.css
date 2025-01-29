@@ -1,0 +1,112 @@
+/* เอาไว้ไปแทน download.php */
+
+
+<?php
+$host = 'localhost';
+$port = '5432';
+$dbname = 'b_farm';
+$user = 'postgres';
+$password = 'postgres';
+
+try {
+    $conn = new PDO("pgsql:host=$host;port=$port;dbname=$dbname", $user, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+
+// ดึงข้อมูลจากฐานข้อมูล
+$stmt = $conn->query("SELECT * FROM download ORDER BY id DESC");
+$downloads = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Download B-Farm</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Include Navbar -->
+    <?php
+        $navbar_path = __DIR__ . '/includes/navbar.php';
+        if (file_exists($navbar_path)) {
+            include $navbar_path;
+        } else {
+            echo '<p style="color:red;">Error: Navbar file not found!</p>';
+        }
+    ?>
+
+    <!-- ส่วนดาวน์โหลด -->
+    <div class="download-section" style="
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;">
+        <div class="header-container">
+            <h1 style="
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #333;">
+                <i class="fas fa-download"></i> Download Files
+            </h1>
+        </div>
+
+        <div class="content-section" style="margin-top: 20px;">
+            <table style="
+                width: 100%;
+                border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 10px; border-bottom: 2px solid #ddd;">#</th>
+                        <th style="padding: 10px; border-bottom: 2px solid #ddd;">Title</th>
+                        <th style="padding: 10px; border-bottom: 2px solid #ddd;">Version</th>
+                        <th style="padding: 10px; border-bottom: 2px solid #ddd;">File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (count($downloads) > 0): ?>
+                        <?php foreach ($downloads as $download): ?>
+                            <tr>
+                                <td style="padding: 10px;"><?= htmlspecialchars($download['id']) ?></td>
+                                <td style="padding: 10px;"><?= htmlspecialchars($download['title']) ?></td>
+                                <td style="padding: 10px;"><?= htmlspecialchars($download['version']) ?></td>
+                                <td style="padding: 10px;">
+                                    <a href="<?= htmlspecialchars($download['file']) ?>" download style="color: #4CAF50;">
+                                        Download
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr>
+                            <td colspan="4" style="padding: 10px; text-align: center; color: #888;">
+                                No files available.
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Include Footer -->
+    <?php
+        $footer_path = __DIR__ . '/includes/footer.php';
+        if (file_exists($footer_path)) {
+            include $footer_path;
+        } else {
+            echo '<p class="error-message">Error: Footer file not found!</p>';
+        }
+    ?>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

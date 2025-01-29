@@ -1,0 +1,91 @@
+/* Base Styles */
+body {
+    font-family: 'Mitr', sans-serif;
+    color: #4a4a4a; /* Slightly lighter shade for a softer appearance */
+    background: #fafafa; /* Very light gray to reduce glare */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Increased line-height for better readability */
+}
+
+/* News Header Styles */
+.news-header {
+    background-color: #0056b3; /* Slightly darker blue for better contrast */
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 28px; /* Larger text for prominence */
+}
+
+/* Container for all news items */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Featured News Styles */
+.featured-news {
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Softer shadow */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.featured-news:hover {
+    transform: scale(1.03); /* Scale effect for interactivity */
+}
+
+.featured-news img {
+    width: 100%;
+    height: auto; /* Adjust height to be auto for natural aspect ratio */
+}
+
+.featured-news h3, .featured-news p {
+    padding: 20px;
+}
+
+/* Other News Grid */
+.grid-news {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.news-item {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.news-item img {
+    width: 100%;
+    height: 220px;
+}
+
+.news-content {
+    padding: 20px;
+    font-size: 18px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .featured-news img, .news-item img {
+        height: auto; /* Adjust images to scale properly on smaller screens */
+    }
+
+    .news-header {
+        font-size: 24px; /* Adjust header size for smaller screens */
+    }
+}

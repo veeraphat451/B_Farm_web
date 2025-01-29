@@ -1,0 +1,20 @@
+@charset "utf-8";
+body{
+	font-size: 14px;
+	font-family: 'Prompt', sans-serif;
+	color:#000;
+}
+.swal-text {
+	text-align:center;
+	font-family: 'Prompt', sans-serif;
+}
+.swal-footer {
+	text-align:center;
+	font-family: 'Prompt', sans-serif;
+}
+.swal-button {
+    text-align:center;
+	font-family: 'Prompt', sans-serif;
+}
+
+

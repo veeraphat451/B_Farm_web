@@ -1,0 +1,126 @@
+/* =======================================================
+   Body and Global Styles
+   ======================================================= */
+   body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* =======================================================
+   Login Container
+   ======================================================= */
+.login-container {
+    background: white;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-10px);
+}
+
+/* =======================================================
+   Heading Styling
+   ======================================================= */
+h2 {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 32px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* =======================================================
+   Form Styling
+   ======================================================= */
+/* Form Labels */
+label {
+    text-align: left;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* Input Fields */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #2193b0;
+    box-shadow: 0 0 5px rgba(33, 147, 176, 0.5);
+    outline: none;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    color: white;
+    padding: 14px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background: #2193b0;
+    transform: scale(1.05);
+}
+
+/* =======================================================
+   Error Styling
+   ======================================================= */
+.error {
+    color: #e74c3c;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* =======================================================
+   Links Styling
+   ======================================================= */
+.links {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.links a {
+    color: #2193b0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* =======================================================
+   Logo Styling
+   ======================================================= */
+.login-logo img {
+    display: block;
+    margin: 0 auto;
+}
+

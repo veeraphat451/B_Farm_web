@@ -1,0 +1,280 @@
+.mitr-light {
+    font-family: "Mitr", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* =======================================================
+   Global Styles (global.css)
+   ======================================================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f4f3;
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =======================================================
+   Animations (animations.css)
+   ======================================================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes moveBg {
+    from {
+        transform: rotate(45deg) translateX(0);
+    }
+    to {
+        transform: rotate(45deg) translateX(-100px);
+    }
+}
+
+/* =======================================================
+   Responsive Design (responsive.css)
+   ======================================================= */
+@media (max-width: 1024px) {
+    .features-cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 50px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* =======================================================
+   Footer Styles (footer.css)
+   ======================================================= */
+/* .footer {
+    background-color: #152620;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-center {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+} */
+
+/* =======================================================
+   Footer Styles
+   ======================================================= */
+  /* Footer */
+.footer {
+    background-color: #152620;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* ระยะห่างระหว่างคอลัมน์ */
+}
+
+/* คอลัมน์ */
+.footer-column {
+    flex: 1;
+    text-align: left;
+    position: relative; /* เพื่อวางเส้นแนวตั้ง */
+}
+
+/* h3 ส่วนหัว */
+.footer-column h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* เส้นยาวใต้ h3 */
+.footer-column .vertical-line {
+    border: none;
+    border-left: 2px solid white; /* เส้นแนวตั้ง */
+    height: 100px; /* ความยาวของเส้น */
+    position: absolute;
+    top: 20px; /* ระยะห่างจากด้านบน */
+    left: 5; /* จัดชิดด้านซ้าย */
+}
+
+/* เนื้อหาภายในคอลัมน์ */
+.footer-column p,
+.footer-column a {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/* ไอคอน */
+.footer i {
+    margin-right: 60px;
+}
+
+/* โลโก้ */
+.footer-column.logos {
+    display: flex; /* ใช้ Flexbox */
+    flex-wrap: wrap; /* หากโลโก้เกิน ให้ขึ้นบรรทัดใหม่ */
+    justify-content: center; /* จัดโลโก้ให้อยู่ตรงกลางในแนวนอน */
+    align-items: center; /* จัดโลโก้ให้อยู่ตรงกลางในแนวตั้ง */
+    text-align: center; /* เผื่อกรณีที่มีข้อความใต้โลโก้ */
+    gap: 20px; /* ระยะห่างระหว่างโลโก้ */
+}
+
+.footer-column.logos img {
+    width: 180px;
+    margin-bottom: 20px; /* ระยะห่างระหว่างโลโก้ */
+}
+
+/* .footer-center {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+} */
+
+
+
+
+
+/* =======================================================
+   Navbar Styles (navber.css)
+   ======================================================= */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+nav ul li {
+    margin-right: 20px;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+nav ul li a.login-button {
+    font-weight: bold;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a.login-button:hover {
+    background-color: #FFD700;
+    color: #035c46;
+}
+.logo-text {
+    font-size: 24px; /* ขนาดตัวอักษร */
+    color: #FFFFFF; /* สีของตัวอักษร */
+    font-family: "Mitr", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Navbar Visibility Styles */
+.navbar-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-visible {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+}
